@@ -15,7 +15,7 @@ compinit
 autoload -U colors && colors
 PROMPT="%{$fg[green]%}%n@%{$reset_color%}%{$fg[red]%}%m:%{$fg_no_bold[yellow]%}%~ %{$reset_color%}> "
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-builder/output/shell/base16-eighties.dark.sh"
+BASE16_SHELL="$HOME/.colours/base16-builder/output/shell/base16-eighties.dark.sh"
  [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # enable color support of ls and also add handy aliases
