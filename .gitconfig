@@ -1,0 +1,8 @@
+[user]
+	name = Finlay McCourt
+	email = finlaymccourt@gmail.com
+[core]
+	excludesfile = /home/finlay/.gitignore
+	editor = vim
+[credential]
+	helper = cache
