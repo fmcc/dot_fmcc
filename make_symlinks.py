@@ -6,6 +6,11 @@ home_dir = os.path.expanduser('~')
 backup_path = os.path.join(home_dir, '.old_config')
 os.mkdir(backup_path)
 
+exclude
+rec_dirs = ["config", "fonts"]
+
+
+
 paths = [(os.path.join(os.getcwd(), dir_item), 
     os.path.join(backup_path, dir_item), 
     os.path.join(home_dir, '.' + dir_item))

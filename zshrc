@@ -33,7 +33,8 @@ alias l='ls -CF'
 
 alias tmux='tmux -2'
 alias ipynb="ipython notebook --browser=chromium"
-export PATH="$HOME/.cabal/bin:$PATH"
+alias tng="play -c 2 -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120 gain +10"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.npm:$PATH"
 export EDITOR=/usr/bin/vim
 
 case $TERM in

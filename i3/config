@@ -29,6 +29,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
+# start a terminal
+bindsym $mod+Shift+Return exec xfce4-terminal --working-directory=`xcwd`
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
