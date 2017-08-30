@@ -34,8 +34,13 @@ alias l='ls -CF'
 alias tmux='tmux -2'
 alias ipynb="ipython notebook --browser=chromium"
 alias tng="play -c 2 -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120 gain +10"
-export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.npm:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.npm:$PATH"
+export RUST_SRC_PATH="/usr/local/src/rust/src"
 export EDITOR=/usr/bin/vim
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 case $TERM in
     xterm*)
