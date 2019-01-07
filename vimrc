@@ -21,6 +21,18 @@ Plugin 'lukerandall/haskellmode-vim'
 "Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 
+" Terraform
+Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
+
+" Groovy/Jenkins
+Plugin 'vim-scripts/groovy.vim'
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-cucumber'
+
+Plugin 'junegunn/vim-easy-align'
 Plugin 'jceb/vim-orgmode'
 Plugin 'majutsushi/tagbar'
 Plugin 'rking/ag.vim'
@@ -58,12 +70,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "This sets 256 colours as options in Vim. 	
-set t_Co=256
-let base16colorspace=256
-
-"Set a colour scheme for use with Vim
-set background=dark
-colorscheme base16-default
+"
+if !exists('g:colors_name') || g:colors_name != 'base16-eighties'
+    set t_Co=256
+    let base16colorspace=256
+    set background=dark
+    colorscheme base16-eighties
+endif
 
 "This sets the number of items to save in the history
 set history=1000
@@ -125,7 +138,8 @@ set number
 
 " ctrl+n to open up nertree...
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$','\.hi$','\.o$']
+let NERDTreeIgnore = ['\.pyc$','\.hi$','\.o$','^.pytest_cache$', '^.git$']
+let NERDTreeShowHidden=1
 
 " indent and break marker on linewrap
 set breakindent
@@ -167,3 +181,26 @@ setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 map <leader>s :%!stylish-haskell<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Terraform indentation
+let g:terraform_align=1
+
+"Groovy highlighting in Jenkinsfile
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+" Hide Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" Enable terraform plan to be include in filter
+let g:syntastic_terraform_tffilter_plan = 1
+
+" Remap split switching commands
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

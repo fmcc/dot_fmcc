@@ -6,7 +6,7 @@ home_dir = os.path.expanduser('~')
 backup_path = os.path.join(home_dir, '.old_config')
 os.mkdir(backup_path)
 
-exclude
+
 rec_dirs = ["config", "fonts"]
 
 
